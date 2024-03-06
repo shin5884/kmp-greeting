@@ -26,22 +26,20 @@ kotlin {
         }
     }
 
-    val ktorVersion = "2.3.7"
-    
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
-            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-            implementation("io.ktor:ktor-client-core:$ktorVersion")
-            implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
-            implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+            implementation(libs.kotlinx.datetime)
+            implementation(libs.kotlinx.coroutine)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization)
         }
         androidMain.dependencies {
-            implementation("io.ktor:ktor-client-android:$ktorVersion")
+            implementation(libs.ktor.client.android)
         }
         iosMain.dependencies {
-            implementation("io.ktor:ktor-client-darwin:$ktorVersion")
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
