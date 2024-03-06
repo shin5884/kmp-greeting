@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.ir.backend.js.compile
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -34,6 +35,7 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization)
+            implementation(libs.koin)
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.android)

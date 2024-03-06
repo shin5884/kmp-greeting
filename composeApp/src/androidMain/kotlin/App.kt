@@ -9,13 +9,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import org.example.greeting.MainViewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
-fun App(mainViewModel: MainViewModel = viewModel()) {
+fun App(mainViewModel: MainViewModel) {
     MaterialTheme {
         val greetings by mainViewModel.greetingList.collectAsStateWithLifecycle()
 
