@@ -1,3 +1,3 @@
-[submodule "share"]
-	path = share
+[submodule "shared"]
+	path = shared
 	url = https://github.com/shin5884/kmp-share
