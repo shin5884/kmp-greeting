@@ -1,5 +1,7 @@
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
@@ -17,11 +19,16 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun App(mainViewModel: MainViewModel) {
     MaterialTheme {
         val greetings by mainViewModel.greetingList.collectAsStateWithLifecycle()
+        val lastRocketLaunchSucceed by mainViewModel.lastRocketLaunchSucceed.collectAsStateWithLifecycle()
 
         Column(
             modifier = Modifier.padding(all = 20.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
+            lastRocketLaunchSucceed?.let {
+                Text("Rocket:${if (it) "🚀" else "💥"}")
+                Spacer(Modifier.height(16.dp))
+            }
             greetings.forEach { greeting ->
                 Text(greeting)
                 Divider()
